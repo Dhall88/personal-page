@@ -8,39 +8,34 @@ import {
   Link
 } from "react-router-dom";
 
-import { Home, About, Dashboard } from './index'
+import {Row, Col} from 'reactstrap'
+
+import { Home, About, AppPage, UserHamburger } from './index'
 
 function App() {
   return (
     <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-        </ul>
+      <Row md="10" className="col">
+        <Col className='main-nav'>
+          <Link to="/">Home</Link>
 
-        <hr />
+          <Link to="/about">About</Link>
 
-        {/*
-          A <Switch> looks through all its children <Route>
-          elements and renders the first one whose path
-          matches the current URL. Use a <Switch> any time
-          you have multiple routes, but you want only one
-          of them to render at a time
-        */}
+          <Link to="/dashboard">Dashboard</Link>
+
+        </Col>
+        <Col md="2">
+          <UserHamburger />
+        </Col>
+ 
+
+      
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/app-page" element={<AppPage />} />
         </Routes>
-      </div>
+      </Row>
     </Router>
   );
 }

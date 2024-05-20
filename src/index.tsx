@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-export { default as Home } from './views/home'
-export { default as About } from './views/about'
-export { default as Dashboard } from './views/dashboard'
+import 'bootstrap/dist/css/bootstrap.min.css'
+export { default as Home } from './views/home';
+export { default as About } from './views/about';
+export { default as AppPage } from './views/app-page';
+export { default as UserHamburger } from './components/UserHamburger';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
